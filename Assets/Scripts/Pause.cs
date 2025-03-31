@@ -9,12 +9,12 @@ public class Pause : MonoBehaviour
     private bool pause = false;
     public GameObject panelPause;
     //public GameObject music;
-    private PlayerMovement playerScript;
+    //private PlayerMovement playerScript;
 
     void Start()
     {
         panelPause.SetActive(false);
-        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        //playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     void Update()
@@ -27,7 +27,7 @@ public class Pause : MonoBehaviour
         if (pause)
         {
             Time.timeScale = 0;
-            playerScript.enabled = false;
+            //playerScript.enabled = false;
             Cursor.lockState = CursorLockMode.None;
             panelPause.SetActive(true);
             //music.SetActive(false);
@@ -40,7 +40,7 @@ public class Pause : MonoBehaviour
         else if (!pause)
         {
             Time.timeScale = 1;
-            playerScript.enabled = true;
+            //playerScript.enabled = true;
             Cursor.lockState = CursorLockMode.Locked;
             panelPause.SetActive(false);
             //music.SetActive(true);
