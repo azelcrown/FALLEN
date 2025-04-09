@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,10 +11,20 @@ public class PlayerInteraction : MonoBehaviour
     private new Transform camera;
     public float rayDistance;
 
+    // Declarar variables:
+    private UIManager uiManager;
+    private GameObject textUI;
+    public static FirstPersonController playerScript;
+
     void Start()
     {
         mask = LayerMask.GetMask("Interactable");
-        camera = transform.Find("Main Camera");
+        camera = transform.Find("MainCamera");
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
+
+        // Obtener elementos gráficos UI:
+        uiManager = FindObjectOfType<UIManager>();
+        textUI = uiManager.textPick;
     }
 
     // Update is called once per frame
@@ -24,27 +35,30 @@ public class PlayerInteraction : MonoBehaviour
         RaycastHit hit; // declarar
         if (Physics.Raycast(camera.position, camera.forward, out hit, rayDistance, mask))
         {
-            Deselected();
-            Debug.Log("object");
-            Selected(); // activar puntero
-            if (Input.GetButtonDown("Cuadrado")) // Mostrar el mensaje del Material:
+            Selected(); // Aparece el mnsj de la UI
+            Debug.Log("Pulsar P");
+            if (Input.GetButtonDown("Pick")) // Al pulsar 'P':
             {
-                Debug.Log("Cuadrado pulsado");
-                hit.transform.GetComponent<Interactable>().Interact();
+                Debug.Log("Recoger");
+                playerScript.enabled = false; // para q el Player no pueda moverse
+                hit.transform.GetComponent<Interactable>().Interact(); // Interactuar con el objeto
             }
         }
         else
         {
-            //Debug.Log("nada");
-            Deselected(); // Si no hay colisión dentro del rango, desactiva el elemento de la interfaz:
+            // Si no hay colisión dentro del rango:
+            Deselected(); // desactiva el elemento de la interfaz
         }
     }
 
-    void Selected() {
-        UIManager.puntero = true;
+    void Selected()
+    {
+        textUI.SetActive(true); // Aparece el mnsj de la UI
     }
     void Deselected()
     {
-        UIManager.puntero = false;
+        textUI.SetActive(false); // desactivar el mnsj de la UI
     }
+
+
 }
