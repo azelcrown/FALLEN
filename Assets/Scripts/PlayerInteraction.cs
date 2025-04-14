@@ -40,7 +40,7 @@ public class PlayerInteraction : MonoBehaviour
             if (Input.GetButtonDown("Pick")) // Al pulsar 'P':
             {
                 Debug.Log("Recoger");
-                playerScript.enabled = false; // para q el Player no pueda moverse
+                //playerScript.enabled = false; // para q el Player no pueda moverse
                 hit.transform.GetComponent<Interactable>().Interact(); // Interactuar con el objeto
             }
         }
