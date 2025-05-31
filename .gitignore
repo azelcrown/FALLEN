@@ -1,2 +1,10 @@
 /Library
 /Temp
+/UserSettings
+/.vscode
+/Logs
+/.gitignore
+/.vsconfig
+/Assembly-CSharp.csproj
+/Assembly-CSharp-Editor.csproj
+/FALLEN.sln
