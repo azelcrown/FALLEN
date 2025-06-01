@@ -25,6 +25,7 @@ public class PlayerInteraction : MonoBehaviour
         // Obtener elementos gráficos UI:
         uiManager = FindObjectOfType<UIManager>();
         textUI = uiManager.textPick;
+        
     }
 
     // Update is called once per frame
@@ -35,11 +36,14 @@ public class PlayerInteraction : MonoBehaviour
         RaycastHit hit; // declarar
         if (Physics.Raycast(camera.position, camera.forward, out hit, rayDistance, mask))
         {
-            Selected(); // Aparece el mnsj de la UI
-            Debug.Log("Pulsar P");
+            if (!Pickable.up)
+            {
+                uiManager.ShowMessage(textUI);// Aparece el mnsj de la UI
+            }
             if (Input.GetButtonDown("Pick")) // Al pulsar 'P':
             {
-                Debug.Log("Recoger");
+                Debug.Log("Levitando");
+                uiManager.HideMessage(textUI); // desactiva el elemento de la interfaz
                 //playerScript.enabled = false; // para q el Player no pueda moverse
                 hit.transform.GetComponent<Interactable>().Interact(); // Interactuar con el objeto
             }
@@ -47,18 +51,8 @@ public class PlayerInteraction : MonoBehaviour
         else
         {
             // Si no hay colisión dentro del rango:
-            Deselected(); // desactiva el elemento de la interfaz
+            uiManager.HideMessage(textUI); // desactiva el elemento de la interfaz
         }
     }
-
-    void Selected()
-    {
-        textUI.SetActive(true); // Aparece el mnsj de la UI
-    }
-    void Deselected()
-    {
-        textUI.SetActive(false); // desactivar el mnsj de la UI
-    }
-
 
 }

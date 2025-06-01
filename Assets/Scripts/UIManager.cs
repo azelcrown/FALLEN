@@ -26,10 +26,14 @@ public class UIManager : MonoBehaviour
     }
 
     // Funciones UI objetos:
-    public void ShowMessage() // Mostrar objeto string mensaje
+    public void ShowMessage(GameObject text) // Mostrar objeto string mensaje
     {
-         // Mostrar objeto
-        //interacText.text = mensaje; // reescribir el texto con el mensaje
-    } 
-    
+        text.SetActive(true);
+    }
+    public void HideMessage(GameObject text) // Mostrar objeto string mensaje
+    {
+        text.SetActive(false);
+    }
+
+
 }

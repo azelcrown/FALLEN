@@ -10,10 +10,12 @@ public class Pickable : Interactable
 
     private Vector3 destino;
     private bool moviendo = false;
+    public static bool up = false;
     private Rigidbody rb;
 
     private UIManager uiManager;
-    private GameObject textUI;
+    private GameObject textPick;
+    private GameObject textSave;
 
     public override void Interact()
     {
@@ -30,7 +32,8 @@ public class Pickable : Interactable
 
         // Obtener elementos gráficos UI:
         uiManager = FindObjectOfType<UIManager>();
-        textUI = uiManager.textSave;
+        textPick = uiManager.textPick;
+        textSave = uiManager.textSave;
     }
 
     void Update()
@@ -45,21 +48,27 @@ public class Pickable : Interactable
             {
                 transform.position = destino;
                 moviendo = false;
-                textUI.SetActive(true); // Aparece el mnsj de la UI
+                up = true;
             }
         }
-        if (Input.GetButtonDown("Guardar")) // Al pulsar 'G':
-        {
-            Guardar();
-            textUI.SetActive(false); // desactivar el mnsj de la UI
-            PlayerInteraction.playerScript.enabled = true; // activar el movimiento del Player
+        if (up) {
+            uiManager.ShowMessage(textSave); // Aparece el mnsj de la UI
+            uiManager.HideMessage(textPick); // desactivar el mnsj anterior d Pick
+
+            if (Input.GetButtonDown("Guardar")) // Al pulsar 'G':
+            {
+                Guardar();
+                uiManager.HideMessage(textSave); // desactivar el mnsj de la UI
+                PlayerInteraction.playerScript.enabled = true; // activar el movimiento del Player
+            }
+            else if (Input.GetButtonDown("Soltar")) // Al pulsar 'S':
+            {
+                Soltar();
+                uiManager.HideMessage(textSave); // desactivar el mnsj de la UI
+                PlayerInteraction.playerScript.enabled = true; // activar el movimiento del Player
+            }
         } 
-        else if (Input.GetButtonDown("Soltar")) // Al pulsar 'S':
-        {
-            Soltar();
-            textUI.SetActive(false); // desactivar el mnsj de la UI
-            PlayerInteraction.playerScript.enabled = true; // activar el movimiento del Player
-        }
+        
     }
 
     public void LevitatePickable()
@@ -79,10 +88,13 @@ public class Pickable : Interactable
         moviendo = false;
         rb.isKinematic = false;
         rb.useGravity = true;
+        up = false;
     }
     public void Guardar()
     {
+        Debug.Log("guardado");
         moviendo = false;
+        up = false;
         Destroy(gameObject); // desaparece
         // Aquí habría q ir añadiendolos en una lista o array, aunq sea los nombres
         // para poder visualizarlos luego en el inventario, pero solo lo de la lista.
