@@ -87,6 +87,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f7e8bc53f204e045a544a0e4b96115f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6803398896903567748}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f7e8bc53f204e045a544a0e4b96115f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5395428373270162222}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f7e8bc53f204e045a544a0e4b96115f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7609365036160432642}
     - targetCorrespondingSourceObject: {fileID: -8611807115736003272, guid: 2f7e8bc53f204e045a544a0e4b96115f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6058699018733171931}
@@ -148,6 +154,56 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!23 &5395428373270162222
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753645929695851746}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9cf63cc4bac45a54abb6798d77730fe3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &7609365036160432642
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753645929695851746}
+  m_Mesh: {fileID: 2443811684418303770, guid: 2f7e8bc53f204e045a544a0e4b96115f, type: 3}
 --- !u!1 &6648430795933013462 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1975619733972886427, guid: 2f7e8bc53f204e045a544a0e4b96115f, type: 3}

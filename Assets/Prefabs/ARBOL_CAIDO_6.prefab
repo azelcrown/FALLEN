@@ -91,6 +91,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 403a2ce1a1275ac4a8833e3535245bd5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7857087308607536103}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 403a2ce1a1275ac4a8833e3535245bd5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4316539007966658773}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 403a2ce1a1275ac4a8833e3535245bd5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5269161032996823381}
     - targetCorrespondingSourceObject: {fileID: 5592153238688982481, guid: 403a2ce1a1275ac4a8833e3535245bd5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4883181615384900}
@@ -152,6 +158,56 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!23 &4316539007966658773
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5127038976759498581}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9cf63cc4bac45a54abb6798d77730fe3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &5269161032996823381
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5127038976759498581}
+  m_Mesh: {fileID: -7379721111688452835, guid: 4e06c40818257cd49ac77d0603fdc4bd, type: 3}
 --- !u!1 &8350096936990153986 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4036931662841915142, guid: 403a2ce1a1275ac4a8833e3535245bd5, type: 3}
