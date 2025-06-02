@@ -9,18 +9,23 @@ public class Pickable : Interactable
     public float velocidad = 2f;       // Velocidad del movimiento
 
     private Vector3 destino;
+    private Rigidbody rb;
     private bool moviendo = false;
     public static bool up = false;
-    private Rigidbody rb;
+    private bool haCaido = false;
 
     private UIManager uiManager;
     private GameObject textPick;
     private GameObject textSave;
 
+    public AudioClip sonidoCaida;
+    private AudioSource audioSource;
+    public ParticleSystem particulasCaida;
+
     public override void Interact()
     {
         base.Interact(); // Sobreescribe la función Interact() para este tipo de objetos
-
+        up = true;
         LevitatePickable(); // El objeto flota delante de la cámara y si no lo quiere, vuelve a caer.
     }
 
@@ -34,6 +39,11 @@ public class Pickable : Interactable
         uiManager = FindObjectOfType<UIManager>();
         textPick = uiManager.textPick;
         textSave = uiManager.textSave;
+
+        // Inicializar el audio:
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.clip = sonidoCaida;
     }
 
     void Update()
@@ -48,7 +58,6 @@ public class Pickable : Interactable
             {
                 transform.position = destino;
                 moviendo = false;
-                up = true;
             }
         }
         if (up) {
@@ -81,6 +90,7 @@ public class Pickable : Interactable
         destino.y = cam.transform.position.y; // Mantener la misma altura que la cámara
 
         moviendo = true;
+        haCaido = false;
     }
 
     public void Soltar()
@@ -100,5 +110,19 @@ public class Pickable : Interactable
         // para poder visualizarlos luego en el inventario, pero solo lo de la lista.
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Si no hemos caído aún y tocamos el suelo
+        if (!haCaido && collision.relativeVelocity.y > 1f)
+        {
+            haCaido = true;
+
+            if (sonidoCaida != null)
+                audioSource.Play();
+
+            if (particulasCaida != null)
+                particulasCaida.Play();
+        }
+    }
 
 }
