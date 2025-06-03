@@ -80,6 +80,7 @@
     <Compile Include="Assets\StarterAssets\FirstPersonController\Scripts\BasicRigidBodyPush.cs" />
     <Compile Include="Assets\SHADERS_Y_PACKAGES\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Quads.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Sounds\SonidoAmbiental.cs" />
     <Compile Include="Assets\SHADERS_Y_PACKAGES\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
     <Compile Include="Assets\SHADERS_Y_PACKAGES\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\ContrastEnhance.cs" />
     <Compile Include="Assets\SHADERS_Y_PACKAGES\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
