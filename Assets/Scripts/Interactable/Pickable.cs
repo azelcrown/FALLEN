@@ -20,7 +20,7 @@ public class Pickable : Interactable
 
     public AudioClip sonidoCaida;
     private AudioSource audioSource;
-    public ParticleSystem particulasCaida;
+    //public ParticleSystem particulasCaida;
 
     public override void Interact()
     {
@@ -68,13 +68,11 @@ public class Pickable : Interactable
             {
                 Guardar();
                 uiManager.HideMessage(textSave); // desactivar el mnsj de la UI
-                PlayerInteraction.playerScript.enabled = true; // activar el movimiento del Player
             }
             else if (Input.GetButtonDown("Soltar")) // Al pulsar 'S':
             {
                 Soltar();
                 uiManager.HideMessage(textSave); // desactivar el mnsj de la UI
-                PlayerInteraction.playerScript.enabled = true; // activar el movimiento del Player
             }
         } 
         
@@ -95,8 +93,8 @@ public class Pickable : Interactable
 
     public void Soltar()
     {
+        Debug.Log("Cae");
         moviendo = false;
-        rb.isKinematic = false;
         rb.useGravity = true;
         up = false;
     }
@@ -120,8 +118,8 @@ public class Pickable : Interactable
             if (sonidoCaida != null)
                 audioSource.Play();
 
-            if (particulasCaida != null)
-                particulasCaida.Play();
+            /*if (particulasCaida != null)
+                particulasCaida.Play();*/
         }
     }
 

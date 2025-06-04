@@ -14,13 +14,11 @@ public class PlayerInteraction : MonoBehaviour
     // Declarar variables:
     private UIManager uiManager;
     private GameObject textUI;
-    public static FirstPersonController playerScript;
 
     void Start()
     {
         mask = LayerMask.GetMask("Interactable");
         camera = transform.Find("MainCamera");
-        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
 
         // Obtener elementos gráficos UI:
         uiManager = FindObjectOfType<UIManager>();
@@ -44,7 +42,6 @@ public class PlayerInteraction : MonoBehaviour
             {
                 Debug.Log("Levitando");
                 uiManager.HideMessage(textUI); // desactiva el elemento de la interfaz
-                //playerScript.enabled = false; // para q el Player no pueda moverse
                 hit.transform.GetComponent<Interactable>().Interact(); // Interactuar con el objeto
             }
         }

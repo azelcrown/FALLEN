@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Obtener elementos gráficos UI:
-        uiManager = FindObjectOfType<UIManager>();
+        // uiManager = FindObjectOfType<UIManager>();
 
     }
 
