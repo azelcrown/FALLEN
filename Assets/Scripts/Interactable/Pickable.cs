@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody), typeof(Collider))]
 public class Pickable : Interactable
 {
     public float distanciaFrente = 2f; // Distancia frente a la cámara
@@ -93,19 +93,18 @@ public class Pickable : Interactable
 
     public void Soltar()
     {
+        rb.useGravity = true; // activar gravedad = caer
+        rb.isKinematic = false;
         Debug.Log("Cae");
-        moviendo = false;
-        rb.useGravity = true;
         up = false;
+        haCaido = true;
     }
     public void Guardar()
     {
-        Debug.Log("guardado");
-        moviendo = false;
-        up = false;
         Destroy(gameObject); // desaparece
-        // Aquí habría q ir añadiendolos en una lista o array, aunq sea los nombres
-        // para poder visualizarlos luego en el inventario, pero solo lo de la lista.
+        Debug.Log("Guardado");
+        up = false;
+        haCaido = true;
     }
 
     private void OnCollisionEnter(Collision collision)

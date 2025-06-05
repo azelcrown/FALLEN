@@ -19,12 +19,6 @@ public class UIManager : MonoBehaviour
         textSave.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // Funciones UI objetos:
     public void ShowMessage(GameObject text) // Mostrar objeto string mensaje
     {
@@ -34,6 +28,5 @@ public class UIManager : MonoBehaviour
     {
         text.SetActive(false);
     }
-
 
 }
