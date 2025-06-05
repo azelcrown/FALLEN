@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         // Solo escucha la tecla si ya se mostró la imagen
         if (imagenActiva && Input.GetButtonDown("Play"))
         {
-            SceneManager.LoadScene("Final");
+            SceneManager.LoadScene("FINAL");
         }
     }
 
