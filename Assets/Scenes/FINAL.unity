@@ -4787,7 +4787,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 596614940}
-  - component: {fileID: 596614939}
   - component: {fileID: 596614938}
   m_Layer: 0
   m_Name: GameManager
@@ -4810,19 +4809,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPick: {fileID: 519594703}
   textSave: {fileID: 842289667}
---- !u!114 &596614939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596614937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ecb8af1d0f42464c82cf7f192ef0936, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvasGroup: {fileID: 0}
 --- !u!4 &596614940
 Transform:
   m_ObjectHideFlags: 0
@@ -18380,6 +18366,7 @@ Transform:
   - {fileID: 543450653631891417}
   - {fileID: 3563433456848494352}
   - {fileID: 2036432213}
+  - {fileID: 6039920823813113175}
   - {fileID: 4862647041602089}
   - {fileID: 76347612}
   m_Father: {fileID: 0}
@@ -21112,7 +21099,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.4
   m_Height: 2
@@ -22420,7 +22407,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 1
+  m_AngularDrag: 5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -22491,7 +22478,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 1
+  m_AngularDrag: 5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -23018,7 +23005,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 1
+  m_AngularDrag: 5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -43647,7 +43634,7 @@ GameObject:
   - component: {fileID: 5990998442607824963}
   - component: {fileID: 5932941887976561713}
   - component: {fileID: 6039920823813113176}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CRTMonitor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43833,7 +43820,7 @@ Transform:
   m_GameObject: {fileID: 6036775794916160783}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6899607, y: 0.7125555, z: -0.08270326, w: -0.09684517}
-  m_LocalPosition: {x: -124.62, y: 7.86, z: -977.21}
+  m_LocalPosition: {x: -14.650002, y: -0.88999987, z: 118.93097}
   m_LocalScale: {x: 4.5504045, y: 4.550405, z: 4.5504045}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43842,7 +43829,7 @@ Transform:
   - {fileID: 6040135963772662397}
   - {fileID: 6038567077567710351}
   - {fileID: 6038459052293401239}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1857051337}
   m_LocalEulerAnglesHint: {x: -0.904, y: 194.606, z: 88.038}
 --- !u!114 &6039920823813113176
 MonoBehaviour:
@@ -44620,7 +44607,6 @@ SceneRoots:
   - {fileID: 962337714}
   - {fileID: 856931907}
   - {fileID: 118429071}
-  - {fileID: 6039920823813113175}
   - {fileID: 333053339}
   - {fileID: 1857051337}
   - {fileID: 1701711056}

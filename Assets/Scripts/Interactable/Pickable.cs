@@ -25,7 +25,7 @@ public class Pickable : Interactable
     public override void Interact()
     {
         base.Interact(); // Sobreescribe la función Interact() para este tipo de objetos
-        up = true;
+        
         LevitatePickable(); // El objeto flota delante de la cámara y si no lo quiere, vuelve a caer.
     }
 
@@ -60,21 +60,6 @@ public class Pickable : Interactable
                 moviendo = false;
             }
         }
-        if (up) {
-            uiManager.ShowMessage(textSave); // Aparece el mnsj de la UI
-            uiManager.HideMessage(textPick); // desactivar el mnsj anterior d Pick
-
-            if (Input.GetButtonDown("Guardar")) // Al pulsar 'G':
-            {
-                Guardar();
-                uiManager.HideMessage(textSave); // desactivar el mnsj de la UI
-            }
-            else if (Input.GetButtonDown("Soltar")) // Al pulsar 'S':
-            {
-                Soltar();
-                uiManager.HideMessage(textSave); // desactivar el mnsj de la UI
-            }
-        } 
         
     }
 
@@ -96,15 +81,12 @@ public class Pickable : Interactable
         rb.useGravity = true; // activar gravedad = caer
         rb.isKinematic = false;
         Debug.Log("Cae");
-        up = false;
         haCaido = true;
     }
     public void Guardar()
     {
         Destroy(gameObject); // desaparece
         Debug.Log("Guardado");
-        up = false;
-        haCaido = true;
     }
 
     private void OnCollisionEnter(Collision collision)
