@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\SHADERS_Y_PACKAGES\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\DepthOfField.cs" />
+    <Compile Include="Assets\Props\PLUMAS INTRO\PLUMAS_CAYENDO.cs" />
     <Compile Include="Assets\SHADERS_Y_PACKAGES\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientObscurance.cs" />
     <Compile Include="Assets\SHADERS_Y_PACKAGES\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\Fisheye.cs" />
     <Compile Include="Assets\SHADERS_Y_PACKAGES\#NVJOB Dynamic Sky\Example Scenes\Environment\Standard Assets\Effects\ImageEffects\Scripts\EdgeDetection.cs" />
